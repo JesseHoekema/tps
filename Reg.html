@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Personal Site - Register</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="css/style2.css">
+</head>
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+  </style>
+  </head>
+  <body>
+  
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="info.html">Info</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li style="float:right"><a class="active" href="log.html">Your account</a></li>
+  </ul>
+<body>
+  <h1>&nbsp;</h1>
+  <h1>Register</h1>
+  <form id="registration-form">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <p><a href="log.html">Or Login</a></p>
+    <br>
+    <button type="submit">Register</button>
+  </form>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="js/firebase.js"></script>
+</body>
+</html>
