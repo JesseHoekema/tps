@@ -1,11 +1,11 @@
 // Initialize Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyBWJD_JZdODxyV4dYl811P-bMaT0kNvpKg",
-    authDomain: "zippy-pad-382715.firebaseapp.com",
-    projectId: "zippy-pad-382715",
-    storageBucket: "zippy-pad-382715.appspot.com",
-    messagingSenderId: "58937076992",
-    appId: "1:58937076992:web:c33fd7a4ddd7bec22dd7e5"
+  apiKey: "AIzaSyA2bw4Qy4J93x62-MnAGwbHs2a0hdSxsgo",
+  authDomain: "the-personal-site.firebaseapp.com",
+  projectId: "the-personal-site",
+  storageBucket: "the-personal-site.appspot.com",
+  messagingSenderId: "1064113948040",
+  appId: "1:1064113948040:web:04a8a7b563999e9e7c663d"
   };
   
   firebase.initializeApp(firebaseConfig);
