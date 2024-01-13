@@ -1,0 +1,167 @@
+<head>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="shortcut icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAoSn_kO26n-bckZMJGcRCyCSXn1v_h1E6xqIgqswKvTZjkiFthD4YYNDtbdKfOOKPrwBAeEHLyVmYcP60fhW1VQYCPfqlHlkmp-WXwfj-oyjU-1VHzoASQrusIytCZXZwhyphenhyphen8uxMp2fdsWo05UGwY7w90icqUoYo1SBprWNBdnrTEWzewzkr61CLc-RZJY/w256-h256-p-k-no-nu/favicon.png" type="image/x-icon">
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+    <script src="other.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <title>Contacts | Dashboard</title>
+    <style>
+      body {
+        background-image: url('/images/signin.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+        .box {
+            background-color: lightgrey;
+            width: 300px;
+            border: 5px solid green;
+            padding: 50px;
+            margin: 20px;
+            display: flex;
+            
+        }
+        .flexbox {
+            display: flex;
+        }
+        /* Voeg dit toe aan je CSS-bestand voor stijling */
+    #settings-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    }
+    
+    #settings-box {
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    }
+    #lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    #lightbox-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    }
+    .pas-op {
+    background-color: red;
+    }
+    .pas-op-text {
+    color: red;
+    }
+    h2 {
+    font-size: 30px;
+    }
+    h3 {
+    font-size: 20px;
+    }
+    /* In je CSS-bestand (styles.css) */
+    #profile-picture {
+    width: 130px; /* Pas de breedte aan zoals gewenst */
+    height: 130px; /* Pas de hoogte aan zoals gewenst */
+    margin-top: 10px; /* Voeg deze regel toe voor wat ruimte boven de afbeelding */
+    border-radius: 50%; /* Maak de afbeelding rond */
+    overflow: hidden; /* Verborgen overloop om de ronde vorm te behouden */
+    }
+    
+    
+    /* Voeg andere stijlen voor de rest van je applicatie toe indien nodig */
+    
+    </style>
+</head>
+<center>
+<div class="main-content">
+    <div id="lightbox" class="hidden">
+        <div id="lightbox-content">
+            <label for="profile-picture-url">Profile Picture URL:</label>
+            <input type="text" id="profile-picture-url" placeholder="Enter Image URL">
+            <button type="button" onclick="setProfilePicture()">Set Profile Picture</button>
+            <p>Background Color:</p>
+            <input type="color" id="background-color" value="#ff0000"> <!-- Standaard rood -->
+            <button onclick="setCustomBackgroundColor()">Set Custom Background Color</button>
+            <p class="pas-op-text">Danger zone:</p>
+            <button class="pas-op" onclick="deleteAllInfo()">⚠️ Delete All Info ⚠️</button>
+            <button class="pas-op" onclick="deleteAccount()">⚠️ Delete Account ⚠️</button>
+            <button onclick="closeLightbox()">Sluiten</button>
+        </div>
+    </div>
+    <div id="notes-container">
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1>
+        <h1>&nbsp;</h1><h1>&nbsp;</h1><h1>&nbsp;</h1><h1>&nbsp;</h1>
+        <p>&nbsp;</p>
+        <form id="contact-form">
+            <h3>Contacts</h3>
+              <label for="contact-name">Name:</label>
+              <input type="text" id="contact-name" required>
+              <label for="contact-email">Email:</label>
+              <input type="email" id="contact-email" required>
+              <label for="contact-phone">Phone:</label>
+              <input type="tel" id="contact-phone" required>
+              <button type="button" onclick="saveContactInfo()">Save Contact Info</button>
+              <button type="button" onclick="getContactInfo()">Get Contact Info</button>
+              <div id="contact-info-container"></div>
+          </form>
+    </div>
+</div>
+</div>
+</center>
+<nav class="navbar">
+    <ul class="navbar__menu">
+      <li class="navbar__item">
+        <a href="dashboard.html" class="navbar__link"><i data-feather="home"></i><span>Home</span></a>
+      </li>
+      <li class="navbar__item">
+        <a href="passwords.html" class="navbar__link"><i data-feather="key"></i><span>Passwords</span></a>        
+      </li>
+      <li class="navbar__item">
+        <a href="contacts.html" class="navbar__link"><i data-feather="users"></i><span>Contacts</span></a>        
+      </li>
+      <li class="navbar__item">
+        <a href="creditcards.html" class="navbar__link"><i data-feather="credit-card"></i><span>Credit Cards</span></a>        
+      </li>
+      <li class="navbar__item">
+        <a href="notes.html" class="navbar__link"><i data-feather="edit"></i><span>Notes</span></a>        
+      </li>
+      <li class="navbar__item">
+        <a onclick="openLightbox()" class="navbar__link"><i data-feather="settings"></i><span>Settings</span></a>        
+      </li>
+      <li class="navbar__item">
+        <a onclick="logout()" href="dashboard.html" class="navbar__link"><i data-feather="log-out"></i><span>Log Out</span></a>        
+      </li>
+    </ul>
+    <script src='https://unpkg.com/feather-icons'></script><script  src="./script.js"></script>
+  </nav>
+  <script>
+            function openLightbox() {
+const lightbox = document.getElementById('lightbox');
+lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+const lightbox = document.getElementById('lightbox');
+lightbox.style.display = 'none';
+}
+
+  </script>

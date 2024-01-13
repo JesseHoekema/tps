@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url('/images/signin.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  h1 {
+    text-align: center;
+    color: white;
+  }
+  
+  form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  label, input, button {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input, button {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+   label {
+    color: white;
+   }
+  .box {
+      background-color: lightgrey;
+      width: 300px;
+      border: 5px solid green;
+      padding: 50px;
+      margin: 20px;
+      display: flex;
+  }
+  .flexbox {
+      display: flex;
+  }
+  /* Voeg dit toe aan je CSS-bestand voor stijling */
+#settings-icon {
+position: fixed;
+top: 10px;
+right: 10px;
+font-size: 24px;
+cursor: pointer;
+}
+
+#settings-box {
+position: fixed;
+top: 40px;
+right: 10px;
+background-color: #fff;
+border: 1px solid #ccc;
+padding: 10px;
+display: none;
+}
+#lightbox {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.7);
+display: none;
+justify-content: center;
+align-items: center;
+}
+
+#lightbox-content {
+background: #fff;
+padding: 20px;
+border-radius: 8px;
+}
+.pas-op {
+background-color: red;
+}
+.pas-op-text {
+color: red;
+}
+h2 {
+font-size: 30px;
+}
+h3 {
+font-size: 20px;
+}
+/* In je CSS-bestand (styles.css) */
+#profile-picture {
+width: 130px; /* Pas de breedte aan zoals gewenst */
+height: 130px; /* Pas de hoogte aan zoals gewenst */
+margin-top: 10px; /* Voeg deze regel toe voor wat ruimte boven de afbeelding */
+border-radius: 50%; /* Maak de afbeelding rond */
+overflow: hidden; /* Verborgen overloop om de ronde vorm te behouden */
+}
+.box22 {
+background-color: lightgrey;
+width: 300px;
+border: 5px solid green;
+padding: 50px;
+margin: 20px;
+display: flex;
+margin-left: 0px;
+margin-right: 69px;
+}
+label {
+color: black;
+}
+.hidden {
+  display: none;
+}
