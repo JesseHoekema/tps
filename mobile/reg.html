@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <link rel="shortcut icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAoSn_kO26n-bckZMJGcRCyCSXn1v_h1E6xqIgqswKvTZjkiFthD4YYNDtbdKfOOKPrwBAeEHLyVmYcP60fhW1VQYCPfqlHlkmp-WXwfj-oyjU-1VHzoASQrusIytCZXZwhyphenhyphen8uxMp2fdsWo05UGwY7w90icqUoYo1SBprWNBdnrTEWzewzkr61CLc-RZJY/w256-h256-p-k-no-nu/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="regcss.css">
+    <link rel="stylesheet" href="menu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <style>
+    .bottom a {
+    color: #43b7d7;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+.bottom a:hover {
+    color: #ff8c00;
+    text-decoration: none;
+}
+body {
+    background-image: url('/images/signup.png');
+    background-size: cover;
+  }
+    </style>
+</head>
+<body>
+</head>
+<body>
+<div id="app">
+    <nav role="navigation" class="navigation">
+        <div class="navigation__logo">
+          <a href="/"> 
+              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAoSn_kO26n-bckZMJGcRCyCSXn1v_h1E6xqIgqswKvTZjkiFthD4YYNDtbdKfOOKPrwBAeEHLyVmYcP60fhW1VQYCPfqlHlkmp-WXwfj-oyjU-1VHzoASQrusIytCZXZwhyphenhyphen8uxMp2fdsWo05UGwY7w90icqUoYo1SBprWNBdnrTEWzewzkr61CLc-RZJY/s320/favicon.png" style="height: 50px;">   <!-- Your logo goes here -->
+          </a>
+        </div>
+        <div class="navigation__wrapper">
+          <input type="checkbox" id="hamburger">
+          <label for="hamburger" class="navigation__button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul class="navigation__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="info.html">Info</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    <div class="blurspace">
+    <div class="blur-box">
+    <!-- Registratieformulier -->
+    <div id="register-container">
+        <h2>Register</h2>
+        <p>&nbsp;</p>
+        <label for="register-email">Email:</label>
+        <input class="cool-input" type="email" id="register-email" placeholder="Enter Your Email" required>
+        <label for="register-password">Password:</label>
+        <input class="cool-input" type="password" id="register-password" placeholder="Enter Your Password" required>
+        <button class="cool-button" onclick="register()">Register</button>
+        <div class="bottom">
+            Already have an account?&nbsp;<a href="dashboard.html">Login</a>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+<script src="reg.js"></script>
+<script src='https://unpkg.com/feather-icons'></script><script  src="./script.js"></script>
+</body>
+</html>
+
+</body>
+</html>
