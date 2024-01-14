@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/desktop/images/signin.png');
+    background-image: url('https://raw.githubusercontent.com/JesseHoekema/tps/main/desktop/images/signin.png');
 }
 .blur-box {
     width: 300px;
