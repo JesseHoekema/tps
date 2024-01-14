@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/desktop/signin.png');
+    background-image: url('signin.png');
 }
 .blur-box {
     width: 300px;
