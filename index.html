@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Device Redirect</title>
+  <script>
+    // JavaScript voor het detecteren van het apparaat en doorverwijzen
+
+// Functie om te bepalen of het een mobiel apparaat is
+function isMobileDevice() {
+  return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+}
+
+// Doorverwijzing op basis van het apparaat
+function redirectBasedOnDevice() {
+  if (isMobileDevice()) {
+    // Redirect naar de mobiele pagina als het een mobiel apparaat is
+    window.location.href = 'mobile';
+  } else {
+    // Redirect naar de desktoppagina als het geen mobiel apparaat is
+    window.location.href = 'desktop';
+  }
+}
+
+// Voer de doorverwijzing uit zodra de pagina is geladen
+window.onload = redirectBasedOnDevice;
+  </script>
+</head>
+<body>
+  <h1>Welcome to the Device Redirect Page</h1>
+</body>
+</html>
