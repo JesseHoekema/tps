@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <link rel="shortcut icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAoSn_kO26n-bckZMJGcRCyCSXn1v_h1E6xqIgqswKvTZjkiFthD4YYNDtbdKfOOKPrwBAeEHLyVmYcP60fhW1VQYCPfqlHlkmp-WXwfj-oyjU-1VHzoASQrusIytCZXZwhyphenhyphen8uxMp2fdsWo05UGwY7w90icqUoYo1SBprWNBdnrTEWzewzkr61CLc-RZJY/w256-h256-p-k-no-nu/favicon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <title id="user-email-title"></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="style3.css">
+<link rel="stylesheet" href="style2.css">
+<link rel="stylesheet" href="logincss.css">
+<link rel="stylesheet" href="bar.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+<style>
+  body {
+    background-image: url('https://cdn.discordapp.com/attachments/1168601039969189919/1192552749657772072/error-bg-PDkIe5mI.png?ex=65b2b8cc&is=65a043cc&hm=a65085d05eabe3787ebcea0d3b98c4b93e56743b67620714e236c44cd7a28c9f&');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  h2 {
+    color: black;
+    transition: color 0.4s ease-in-out;
+  }
+  h2:hover {
+    color: orange;
+  }
+  label {
+    color: black;
+    transition: color 0.4s ease-in-out;
+  }
+  label:hover {
+    color: orange;
+  }
+  .infouser {
+    background-color: lightgray;
+    padding: 10px;
+    border: 2px solid;
+  }
+  .setuser {
+    background-color: lightgray;
+    padding: 10px;
+    border: 2px solid;
+    width: 500px;
+  }
+</style>
+</head>
+<body>
+</head>
+<body>
+<div id="app">
+  <nav class="navbar" id="navbarMenu">
+    <ul class="navbar__menu">
+      <li class="navbar__item">
+        <a href="dashboard.html" class="navbar__link"><i data-feather="home"></i><span>Home</span></a>
+      </li>
+      <li class="navbar__item">
+        <a href="passwords.html" class="navbar__link"><i data-feather="key"></i><span>Passwords</span></a>        
+      </li>
+      <li class="navbar__item">
+        <a href="contacts.html" class="navbar__link"><i data-feather="users"></i><span>Contacts</span></a>        
+      </li>
+      <li class="navbar__item">
+        <a href="creditcards.html" class="navbar__link"><i data-feather="credit-card"></i><span>Credit Cards</span></a>        
+      </li>
+      <li class="navbar__item">
+        <a href="notes.html" class="navbar__link"><i data-feather="edit"></i><span>Notes</span></a>        
+      </li>
+      <li class="navbar__item">
+        <a href="userpage.html" class="navbar__link"><i data-feather="box"></i><span>Tools</span></a>        
+      </li>
+      <li class="navbar__item">
+        <a onclick="openLightbox()" class="navbar__link"><i data-feather="settings"></i><span>Settings</span></a>        
+      </li>
+      <li class="navbar__item">
+        <a onclick="logout()" class="navbar__link"><i data-feather="log-out"></i><span>Log Out</span></a>        
+      </li>
+    </ul>
+  </nav>
+</div>
+    <script src='https://unpkg.com/feather-icons'></script><script  src="./script.js"></script>
+<div class="main-content">
+  <div id="user-container" class="hidden">
+    <!--Welcome user begin-->
+    <center>
+      <img id="profile-picture" src="images/ik.png" alt="Set Your Profile Picture In Settings">
+      <p>&nbsp;</p>
+      <div class="infouser">
+        <p>User Info:</p>
+        <p>&nbsp;</p>
+        <p>Email: <span id="user-email"></span>!</p>
+        <p>&nbsp;</p>
+      </div>
+      <p>&nbsp;</p>
+      <div class="setuser">
+        <p>Settings For User</p>
+        <p>&nbsp;</p>
+        <p>Profile Picture:</p>
+        <p>&nbsp;</p>
+        <label for="profile-picture-url">Profile Picture URL:</label>
+        <input type="text" id="profile-picture-url" placeholder="Enter Image URL">
+        <button type="button" onclick="setProfilePicture()">Set Profile Picture</button>
+        <p>Background Color For App</p>
+        <p>&nbsp;</p>
+        <p>Background Color:</p>
+        <p>&nbsp;</p>
+        <input type="color" id="background-color" value="#ff0000"> <!-- Standaard rood -->
+        <button onclick="setCustomBackgroundColor()">Set Custom Background Color</button>
+        <p class="pas-op-text">Danger zone:</p>
+        <p>&nbsp;</p>
+        <button class="pas-op" onclick="deleteAllInfo()">⚠️ Delete All Info ⚠️</button>
+        <button class="pas-op" onclick="deleteAccount()">⚠️ Delete Account ⚠️</button>
+        <button class="pas-op" onclick="sendPasswordResetEmailToCurrentUser()">⚠️ Reset Password ⚠️</button>
+      </div>
+    </center>
+    <!--Welcome user end-->
+    <!--user settings-->
+    <div class="flexbox">
+      <div id="lightbox" class="hidden">
+      <div id="lightbox-content">
+      <label for="profile-picture-url">Profile Picture URL:</label>
+      <input type="text" id="profile-picture-url" placeholder="Enter Image URL">
+      <button type="button" onclick="setProfilePicture()">Set Profile Picture</button>
+      <p>Background Color:</p>
+      <input type="color" id="background-color" value="#ff0000"> <!-- Standaard rood -->
+      <button onclick="setCustomBackgroundColor()">Set Custom Background Color</button>
+      <p class="pas-op-text">Danger zone:</p>
+      <button class="pas-op" onclick="deleteAllInfo()">⚠️ Delete All Info ⚠️</button>
+      <button class="pas-op" onclick="deleteAccount()">⚠️ Delete Account ⚠️</button>
+      <button onclick="closeLightbox()">Sluiten</button>
+      </div>
+      </div>
+      <h1>&nbsp;</h1>
+      </div>
+      <!--user settings end-->
+</div>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+<script src="app.js"></script>
+<script src='https://unpkg.com/feather-icons'></script><script  src="./script.js"></script>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+    <script>
+        function openLightbox() {
+const lightbox = document.getElementById('lightbox');
+lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+const lightbox = document.getElementById('lightbox');
+lightbox.style.display = 'none';
+}
+
+    </script>
+<script>
+      function toggleDiv() {
+    var myDiv = document.getElementById('menuslider');
+    var isVisible = myDiv.style.transform === 'translateX(0%)' || myDiv.style.transform === '';
+
+    if (isVisible) {
+      myDiv.style.transition = 'transform 0.3s ease-in-out';
+      myDiv.style.transform = 'translateX(-100%)';
+    } else {
+      myDiv.style.transition = 'transform 0.3s ease-in-out';
+      myDiv.style.transform = 'translateX(0%)';
+    }
+  }
+</script>
+<script>
+  // JavaScript-code om de begroeting met tijd en datum in realtime bij te werken
+function updateGreeting() {
+    var nu = new Date();
+    var tijd = nu.toLocaleTimeString();
+    var datum = nu.toLocaleDateString();
+    var begroetingTekst = "It's " + tijd + " on " + datum;
+    document.getElementById("groet").innerHTML = begroetingTekst;
+}
+
+// Roep de functie een keer aan om de initiële weergave te hebben
+updateGreeting();
+
+// Stel een interval in om de functie elke seconde bij te werken
+setInterval(updateGreeting, 1000);
+</script>
+</body>
+</html>
+
+</body>
+</html>
