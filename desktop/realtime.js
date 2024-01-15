@@ -1,11 +1,14 @@
-
-    // JavaScript-code om de tijd en datum in realtime bij te werken
-    function updateTimeAndDate() {
+    // JavaScript-code om de begroeting met tijd en datum in realtime bij te werken
+    function updateGreeting() {
         var nu = new Date();
-        var tijdEnDatumTekst = "Hello User Its" + nu.toLocaleString();
-        document.getElementById("tijdEnDatum").innerHTML = tijdEnDatumTekst;
+        var tijd = nu.toLocaleTimeString();
+        var datum = nu.toLocaleDateString();
+        var begroetingTekst = "Hello user, it's " + tijd + " on " + datum;
+        document.getElementById("groet").innerHTML = begroetingTekst;
     }
 
-    updateTimeAndDate();
+    // Roep de functie een keer aan om de initiële weergave te hebben
+    updateGreeting();
 
-setInterval(updateTimeAndDate, 1000);
+    // Stel een interval in om de functie elke seconde bij te werken
+    setInterval(updateGreeting, 1000);
