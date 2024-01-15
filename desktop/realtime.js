@@ -3,7 +3,7 @@
         var nu = new Date();
         var tijd = nu.toLocaleTimeString();
         var datum = nu.toLocaleDateString();
-        var begroetingTekst = "Hello user, it's " + tijd + " on " + datum;
+        var begroetingTekst = "It's " + tijd + " on " + datum;
         document.getElementById("groet").innerHTML = begroetingTekst;
     }
 
