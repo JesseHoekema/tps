@@ -10,7 +10,7 @@ body {
   position: fixed;
   top: 1rem;
   left: 1rem;
-  background: blueviolet ;
+  background: blue ;
   border-radius: 10px;
   padding: 1rem 0;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
