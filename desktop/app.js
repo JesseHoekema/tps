@@ -524,3 +524,19 @@ function hideNavbar() {
     var navbarMenu = document.getElementById('navbarMenu');
     navbarMenu.style.display = 'none';
 }
+function sendPasswordResetEmailToCurrentUser() {
+    const user = auth.currentUser;
+
+    // Controleer of er een gebruiker is ingelogd
+    if (user) {
+        auth.sendPasswordResetEmail(user.email)
+            .then(() => {
+                alert('Password reset email has been sent to: ' + user.email);
+            })
+            .catch(error => {
+                alert('Error sending password reset email: ' + error.message);
+            });
+    } else {
+        console.error('Geen gebruiker ingelogd.');
+    }
+}
